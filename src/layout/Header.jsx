@@ -1,14 +1,14 @@
-import React from 'react'
-import Nav from '../components/Nav'
-import Summary from '../components/Summary'
+import React from "react";
+import Nav from "../components/Nav";
+import Summary from "../components/Summary";
 
-const Header = () => {
+const Header = (props) => {
   return (
-  <>
-  <Nav />
-  <Summary />
-  </>
-  )
-}
+    <>
+      <Nav showCartHandler={props.showCartHandler} />
+      <Summary />
+    </>
+  );
+};
 
-export default Header
+export default Header;

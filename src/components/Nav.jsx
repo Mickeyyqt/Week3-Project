@@ -1,9 +1,17 @@
-const Nav = () => {
+import { useContext } from "react";
+import { itemContext } from "../store/ItemContext";
+
+const Nav = (props) => {
+  const { items } = useContext(itemContext);
+  const totalCart = items.reduce((currentVal, item) => {
+    return currentVal + item.amount;
+  }, 0);
+
   return (
     <nav className="nav">
       <h2 className="nav-title">Favourite</h2>
-      <button>
-        Cart<span>(1)</span>
+      <button onClick={props.showCartHandler}>
+        Cart<span>({totalCart})</span>
       </button>
     </nav>
   );

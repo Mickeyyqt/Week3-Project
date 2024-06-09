@@ -1,9 +1,13 @@
-import React from 'react'
-import Mickey from './layout/Mickey'
-
-function App (){
+import React from "react";
+import Mickey from "./layout/Mickey";
+import ItemContextProvider from "./store/ItemContext";
+function App() {
   return (
-  <Mickey />
-  )
+    <>
+      <ItemContextProvider>
+        <Mickey />
+      </ItemContextProvider>
+    </>
+  );
 }
 export default App;
